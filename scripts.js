@@ -2,11 +2,13 @@ console.log('JS');
 let favFoods = ["rice" , "kimchi" , " soysauce" , "peanutBUTTER" , "ICECREAM"];
 $(document).ready(onReady);
 
-
+let employees = [];
 
 function onReady(params) {
     console.log('Hello from Jquery');
     $('#clickMe').on('click' , buttonClicked);
+    $('#submitForm').on('click' , submitForm);
+
 
     // descendent selector
     $('#favoriteFoods').on('click' , '.deleteBtn' , deleteFunc);
@@ -14,6 +16,26 @@ function onReady(params) {
 
     
 }    
+
+function submitForm(){
+    console.log('SUBMITTED!!! lol actually maybe not, you total clown');
+// this is where I want to grab input values;
+// getter .val()
+let name = $('#name').val();
+console.log('name:' , name);
+
+employees.push(name);
+
+$('#name').val('');
+ $('#title').val('');
+for (let index = 0; index < employees.length; index++) {
+    
+ 
+}
+
+}
+
+
 
 function deleteFunc() {
     console.log('delete');
@@ -39,11 +61,4 @@ function buttonClicked(){
     
         console.log("IM CLICKED");
 }
-
-// event #1
-onReady();
-
-onReady();    
-
-    
 
